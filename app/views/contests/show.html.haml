@@ -1,0 +1,114 @@
+= render partial: "header"
+
+/ ---------------main-----------------
+#main
+  .main-nav
+    .describe
+      %h4
+        このページはプライベートのページです。また、投票結果は誰にも見られることはありません。あなたが投票したページです。
+      %h4
+        現在No.3に投票しています。
+  .main-content{:style => "background-image: url('/assets/bg.gif')"}
+    .contest-title
+      .float-left
+        OurBestDanceShow vol.1
+        %i.fa.fa-lock
+    .clear
+    .description
+      一番カッコイイダンスのショーケースはどれか？
+    .contest-entry
+      .container
+        %div{:role => "tabpanel"}
+          %ul.nav.nav-pills{:role => "tablist", :style => "margin-bottom: 30px;"}
+            %li.active{:role => "presentation"}
+              %a{"aria-controls" => "投票ページ", "data-toggle" => "tab", :href => "#投票ページ", :role => "tab"} 投票ページ
+            %li{:role => "presentation"}
+              %a{"aria-controls" => "ランキングページ", "data-toggle" => "tab", :href => "#ランキングページ", :role => "tab"} ランキングページ
+          .tab-content
+            .tab-pane.fade.in.active{:id => "投票ページ", :role => "tabpanel"}
+              .row
+                .col-xs-4
+                  .thumbnail
+                    .caption
+                      %h3 No.1 Hilty&Bosch
+                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+                .col-xs-4
+                  .thumbnail
+                    .caption
+                      %h3 No.1 Hilty&Bosch
+                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+                .col-xs-4
+                  .thumbnail
+                    .caption
+                      %h3 No.1 Hilty&Bosch
+                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+              .row
+                .col-xs-4
+                  .thumbnail
+                    .caption
+                      %h3 No.1 Hilty&Bosch
+                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+                .col-xs-4
+                  .thumbnail
+                    .caption
+                      %h3 No.1 Hilty&Bosch
+                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+                .col-xs-4
+                  .thumbnail
+                    .caption
+                      %h3 No.1 Hilty&Bosch
+                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+            .tab-pane.fade{:id => "ランキングページ", :role => "tabpanel"}
+              .row
+                .col-xs-12
+                  .thumbnail
+                    .caption
+                      =image_tag('goldmedal.png',:height => "50", :width => "50")
+                      %h3 No.1 Hilty&Bosch (123票)
+                    .movie-box
+                      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+              .row
+                .col-xs-6
+                  .thumbnail
+                    .caption
+                      =image_tag('silvermedal.png',:height => "50", :width => "50")
+                      %h3 No.1 HiltyBosch (123票)
+                    .movie-box
+                      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+                .col-xs-6
+                  .thumbnail
+                    .caption
+                      =image_tag('bronzemedal.png',:height => "50", :width => "50")
+                      %h3 No.1 Hilty&Bosch (123票)
+                    .movie-box
+                      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                    .caption
+                      .vote
+                        %button 投票する
+/ ------------------------------------
+
+= render partial: "footer"

@@ -1,0 +1,59 @@
+= render partial: "header"
+
+/ ---------------main-----------------
+#main
+  .main-bar
+    =image_tag('create-bar.png',:height => "80", :width => "850")
+  .input-data
+    .input-title
+      .float-left
+        基礎データの入力（１／４）
+    .clear
+    .description
+      ※この基礎データはマイページから変更出来ます
+    .user-contents
+      %form.form-horizontal
+        .form-group
+          %label.col-sm-2.control-label{:for => "inputPassword3"} コンテスト名
+          .col-sm-9
+            %input#inputPassword3.form-control{:placeholder => "コンテスト名", :type => "コンテスト名"}
+      %form.form-horizontal
+        .form-group
+          %label.col-sm-2.control-label{:for => "inputPassword3"} コンテストの説明文
+          .col-sm-9
+            %input#inputPassword3.form-control{:placeholder => "コンテストの説明文", :type => "コンテストの説明文"}/
+    .user-contents
+      %table
+        %tr
+          %th 動画のレイアウト
+          %th
+            %input{:name => "input3", :type => "radio", :value => "３列ずつ", :checked => "checked"}
+            ３列ずつ
+          %th
+            %input{:name => "input3", :type => "radio", :value => "４列ずつ"}
+            ４列ずつ
+        %tr
+          %th 投稿者
+          %th
+            %input{:name => "input4", :type => "radio", :value => "表示", :checked => "checked"}
+            表示
+          %th
+            %input{:name => "input4", :type => "radio", :value => "非表示"}
+            非表示
+        %tr
+          %th コンテストのプライバシー
+          %th
+            %input{:name => "input6", :type => "radio", :value => "限定公開", :checked => "checked"}
+            限定公開
+          %th
+            %input{:name => "input6", :type => "radio", :value => "公開"}
+            公開
+
+    .next-button
+      .btn.btn-warning
+        =link_to "次へ進む", "/contests/(@contest)/movie"
+
+
+/ ------------------------------------
+
+= render partial: "footer"

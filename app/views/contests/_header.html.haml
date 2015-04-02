@@ -1,0 +1,44 @@
+/ --------------header----------------
+%nav#header
+  %ul
+    .float-left
+      %li.logo
+        .nav-logo
+          = link_to root_path do
+            = image_tag('logo.png')
+        .clear
+    .float-right
+      %li
+        =link_to contests_path, {:class => "main-nav-link"} do
+          .double-name.left-dotted
+            .English-name
+              contest
+            .Japanese-name
+              コンテスト一覧
+      / %li
+      /   =link_to manual_path, {:class => "main-nav-link"} do
+      /     .double-name.right-dotted
+      /       .English-name
+      /         manual
+      /       .Japanese-name
+      /         使い方
+      / %li
+      /   =link_to help_path, {:class => "main-nav-link"} do
+      /   %a.main-nav-link{:href => "users_nav2.html"}
+      /     .double-name.right-dotted
+      /       .English-name
+      /         help
+      /       .Japanese-name
+      /         ヘルプ
+
+
+
+      %li
+        =link_to new_contest_path, {:class => "main-nav-link"} do
+          .double-name.active
+            .English-name
+              create
+            .Japanese-name
+              コンテスト作成
+      .clear
+/ ------------------------------------

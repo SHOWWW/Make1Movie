@@ -1,0 +1,28 @@
+= render partial: "header"
+
+/ ---------------main-----------------
+#main
+  .main-bar
+    =image_tag('create-bar.png',:height => "80", :width => "850")
+  .input-data
+    .input-title
+      .float-left
+        プレビュー（３／４）
+    .clear
+    .description
+      ※画像をクリックすると全画面表示出来ます
+    .preview-photo
+      =link_to 'preview.png' do
+        =image_tag('preview.png')
+
+    .button-group
+      .next-button
+        = link_to "/contests/(@contest)/url", class: "btn btn-default" do
+          作成する
+      .back-button
+        = link_to "/contests/(@contest)/movie", class: "btn btn-default" do
+          戻る
+      .clear
+/ ------------------------------------
+
+= render partial: "footer"

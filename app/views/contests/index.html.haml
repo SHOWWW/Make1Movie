@@ -1,0 +1,136 @@
+= render partial: "header"
+
+/ ---------------main-----------------
+#main
+  .main-bar
+    .sub-nav-link
+      =link_to contests_path do
+        =image_tag('contest-bar.png',:height => "80", :width => "850")
+  .main-look
+    %nav.look-list
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+      %ul
+        %li
+          .min-header
+            .date
+              2015/6/7
+            .contributor
+              投稿者：SHOWWW
+            .clear
+          .min-main
+            =link_to contest_path(@contest), {:class => "contest-name"} do
+              OurBestDanceShow vol.1
+          .min-footer
+            投票数:382  お気に入り:47
+    .main-pagination
+      %nav
+        %ul.pagination
+          %li
+            %a{"aria-label" => "Previous", :href => "#"}
+              %span{"aria-hidden" => "true"} «
+          %li
+            = link_to '1' , contests_path
+          %li
+            = link_to '2' , contests_path
+          %li
+            = link_to '3' , contests_path
+          %li
+            = link_to '4' , contests_path
+          %li
+            = link_to '5' , contests_path
+          %li
+            %a{"aria-label" => "Next", :href => "#"}
+              %span{"aria-hidden" => "true"} »
+/ ------------------------------------
+
+= render partial: "footer"

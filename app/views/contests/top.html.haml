@@ -1,0 +1,15 @@
+= render partial: "header"
+
+/ ---------------main-----------------
+#main
+  .main-bar
+    %a.sub-nav-link{:href => "contests_index.html"}
+      %img{:height => "80", :src => "assets/contest-bar.png", :width => "850"}
+  .top-box
+    .first-contents
+      Make1Movieは、自由にYouTubeのURLを貼っていくだけで手軽にコンテストを開くことが出来る投票ページ作成ツールです。作成後は投票ページのURLが出力されるので、それをメンバーに共有するだけでコンテストを楽しむことが出来ます。ログインなどの操作は全く必要ありません。
+    .second-contents
+      また、コンテスト作成時に設定で「公開」にしておいたコンテストは、他の人からも見られるようになります。コンテストを広めたい時に利用したり、また他の人のコンテストを除いて投票することも出来ます。
+/ ------------------------------------
+
+= render partial: "footer"
