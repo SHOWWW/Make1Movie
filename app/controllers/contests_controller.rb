@@ -57,8 +57,5 @@ class ContestsController < ApplicationController
   def params_movie
     params.require(:movie).permit(:contest_id,:url)
   end
-  def params_vote
-    params.require(:vote).permit(:name,:movie_id)
-  end
 end
 

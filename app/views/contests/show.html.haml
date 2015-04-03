@@ -9,7 +9,11 @@
       %h4
         現在No.3に投票しています。
   .main-content
-    = form_for @vote, url: {action: "create"} do |v|
+    = form_for @vote, url: votes_path, method: :post do |v|
+      = v.text_field :name
+      = v.select :movie_id, [["No.1", @movies[0].id],["No.2", @movies[1].id],["No.3", @movies[2].id],["No.4", @movies[3].id],["No.5", @movies[4].id],["No.6", @movies[5].id]]
+      = v.submit
+
       .contest-title
         .float-left
           OurBestDanceShow vol.1
@@ -33,56 +37,32 @@
                       .caption
                         %h3 No.1
                       = @movies[0].url.html_safe
-                      .caption
-                        .vote
-                          = v.text_field :name
-                          = v.submit(["投票する"])
                   .col-xs-4
                     .thumbnail
                       .caption
                         %h3 No.2
                       = @movies[1].url.html_safe
-                      .caption
-                        .vote
-                          = v.text_field :name
-                          = v.submit(["投票する"])
                   .col-xs-4
                     .thumbnail
                       .caption
                         %h3 No.3
                       = @movies[2].url.html_safe
-                      .caption
-                        .vote
-                          = v.text_field :name
-                          = v.submit(["投票する"])
                 .row
                   .col-xs-4
                     .thumbnail
                       .caption
                         %h3 No.4
                       = @movies[3].url.html_safe
-                      .caption
-                        .vote
-                          = v.text_field :name
-                          = v.submit(["投票する"])
                   .col-xs-4
                     .thumbnail
                       .caption
                         %h3 No.5
                       = @movies[4].url.html_safe
-                      .caption
-                        .vote
-                          = v.text_field :name
-                          = v.submit(["投票する"])
                   .col-xs-4
                     .thumbnail
                       .caption
                         %h3 No.6
                       = @movies[5].url.html_safe
-                      .caption
-                        .vote
-                          = v.text_field :name
-                          = v.submit(["投票する"])
               .tab-pane.fade{:id => "ランキングページ", :role => "tabpanel"}
                 .row
                   .col-xs-12
