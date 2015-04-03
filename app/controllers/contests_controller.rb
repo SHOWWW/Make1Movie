@@ -6,6 +6,7 @@ class ContestsController < ApplicationController
   def show
     @contest = Contest.find(params[:id])
     @movies = @contest.movies
+    @vote = Vote.new
   end
 
   def new
@@ -55,6 +56,9 @@ class ContestsController < ApplicationController
   end
   def params_movie
     params.require(:movie).permit(:contest_id,:url)
+  end
+  def params_vote
+    params.require(:vote).permit(:name,:movie_id)
   end
 end
 

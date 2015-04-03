@@ -4,11 +4,10 @@
 #main
   .main-bar
     .sub-nav-link
-      =link_to contests_path do
-        =image_tag('contest-bar.png',:height => "80", :width => "850")
+      =image_tag('contest-bar.png',:height => "80", :width => "850")
   .main-look
     %nav.look-list
-      - @contests.each do |c|
+      - @contests.reverse_each do |c|
         %ul
           %li
             .min-header

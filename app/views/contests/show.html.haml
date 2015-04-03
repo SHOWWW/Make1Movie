@@ -9,106 +9,113 @@
       %h4
         現在No.3に投票しています。
   .main-content
-    .contest-title
-      .float-left
-        OurBestDanceShow vol.1
-        %i.fa.fa-lock
-    .clear
-    .description
-      一番カッコイイダンスのショーケースはどれか？
-    .contest-entry
-      .container
-        %div{:role => "tabpanel"}
-          %ul.nav.nav-pills{:role => "tablist", :style => "margin-bottom: 30px;"}
-            %li.active{:role => "presentation"}
-              %a{"aria-controls" => "投票ページ", "data-toggle" => "tab", :href => "#投票ページ", :role => "tab"} 投票ページ
-            %li{:role => "presentation"}
-              %a{"aria-controls" => "ランキングページ", "data-toggle" => "tab", :href => "#ランキングページ", :role => "tab"} ランキングページ
-          .tab-content
-            .tab-pane.fade.in.active{:id => "投票ページ", :role => "tabpanel"}
-              .row
-                .col-xs-4
-                  .thumbnail
-                    .caption
-                      %h3 No.1
-                    = @movies[0].url.html_safe
-                    .caption
-                      .vote
-                        %button 投票する
-                .col-xs-4
-                  .thumbnail
-                    .caption
-                      %h3 No.2
-                    = @movies[1].url.html_safe
-                    .caption
-                      .vote
-                        %button 投票する
-                .col-xs-4
-                  .thumbnail
-                    .caption
-                      %h3 No.3
-                    = @movies[2].url.html_safe
-                    .caption
-                      .vote
-                        %button 投票する
-              .row
-                .col-xs-4
-                  .thumbnail
-                    .caption
-                      %h3 No.4
-                    = @movies[3].url.html_safe
-                    .caption
-                      .vote
-                        %button 投票する
-                .col-xs-4
-                  .thumbnail
-                    .caption
-                      %h3 No.5
-                    = @movies[4].url.html_safe
-                    .caption
-                      .vote
-                        %button 投票する
-                .col-xs-4
-                  .thumbnail
-                    .caption
-                      %h3 No.6
-                    = @movies[5].url.html_safe
-                    .caption
-                      .vote
-                        %button 投票する
-            .tab-pane.fade{:id => "ランキングページ", :role => "tabpanel"}
-              .row
-                .col-xs-12
-                  .thumbnail
-                    .caption
-                      =image_tag('goldmedal.png',:height => "50", :width => "50")
-                      %h3 No.1 Hilty&Bosch (123票)
-                    .movie-box
-                      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
-                    .caption
-                      .vote
-                        %button 投票する
-              .row
-                .col-xs-6
-                  .thumbnail
-                    .caption
-                      =image_tag('silvermedal.png',:height => "50", :width => "50")
-                      %h3 No.1 HiltyBosch (123票)
-                    .movie-box
-                      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
-                    .caption
-                      .vote
-                        %button 投票する
-                .col-xs-6
-                  .thumbnail
-                    .caption
-                      =image_tag('bronzemedal.png',:height => "50", :width => "50")
-                      %h3 No.1 Hilty&Bosch (123票)
-                    .movie-box
-                      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
-                    .caption
-                      .vote
-                        %button 投票する
+    = form_for @vote, url: {action: "create"} do |v|
+      .contest-title
+        .float-left
+          OurBestDanceShow vol.1
+          %i.fa.fa-lock
+      .clear
+      .description
+        一番カッコイイダンスのショーケースはどれか？
+      .contest-entry
+        .container
+          %div{:role => "tabpanel"}
+            %ul.nav.nav-pills{:role => "tablist", :style => "margin-bottom: 30px;"}
+              %li.active{:role => "presentation"}
+                %a{"aria-controls" => "投票ページ", "data-toggle" => "tab", :href => "#投票ページ", :role => "tab"} 投票ページ
+              %li{:role => "presentation"}
+                %a{"aria-controls" => "ランキングページ", "data-toggle" => "tab", :href => "#ランキングページ", :role => "tab"} ランキングページ
+            .tab-content
+              .tab-pane.fade.in.active{:id => "投票ページ", :role => "tabpanel"}
+                .row
+                  .col-xs-4
+                    .thumbnail
+                      .caption
+                        %h3 No.1
+                      = @movies[0].url.html_safe
+                      .caption
+                        .vote
+                          = v.text_field :name
+                          = v.submit(["投票する"])
+                  .col-xs-4
+                    .thumbnail
+                      .caption
+                        %h3 No.2
+                      = @movies[1].url.html_safe
+                      .caption
+                        .vote
+                          = v.text_field :name
+                          = v.submit(["投票する"])
+                  .col-xs-4
+                    .thumbnail
+                      .caption
+                        %h3 No.3
+                      = @movies[2].url.html_safe
+                      .caption
+                        .vote
+                          = v.text_field :name
+                          = v.submit(["投票する"])
+                .row
+                  .col-xs-4
+                    .thumbnail
+                      .caption
+                        %h3 No.4
+                      = @movies[3].url.html_safe
+                      .caption
+                        .vote
+                          = v.text_field :name
+                          = v.submit(["投票する"])
+                  .col-xs-4
+                    .thumbnail
+                      .caption
+                        %h3 No.5
+                      = @movies[4].url.html_safe
+                      .caption
+                        .vote
+                          = v.text_field :name
+                          = v.submit(["投票する"])
+                  .col-xs-4
+                    .thumbnail
+                      .caption
+                        %h3 No.6
+                      = @movies[5].url.html_safe
+                      .caption
+                        .vote
+                          = v.text_field :name
+                          = v.submit(["投票する"])
+              .tab-pane.fade{:id => "ランキングページ", :role => "tabpanel"}
+                .row
+                  .col-xs-12
+                    .thumbnail
+                      .caption
+                        =image_tag('goldmedal.png',:height => "50", :width => "50")
+                        %h3 No.1 Hilty&Bosch (123票)
+                      .movie-box
+                        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      .caption
+                        .vote
+                          %button 投票する
+                .row
+                  .col-xs-6
+                    .thumbnail
+                      .caption
+                        =image_tag('silvermedal.png',:height => "50", :width => "50")
+                        %h3 No.1 HiltyBosch (123票)
+                      .movie-box
+                        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      .caption
+                        .vote
+                          %button 投票する
+                  .col-xs-6
+                    .thumbnail
+                      .caption
+                        =image_tag('bronzemedal.png',:height => "50", :width => "50")
+                        %h3 No.1 Hilty&Bosch (123票)
+                      .movie-box
+                        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      .caption
+                        .vote
+                          %button 投票する
 / ------------------------------------
 
 = render partial: "footer"
