@@ -19,7 +19,8 @@
               =link_to contest_path(c), {:class => "contest-name"} do
                 =c.name
             .min-footer
-              投票数:382
+              投票数:
+              c.Movie.count
       / %ul
       /   %li
       /     .min-header

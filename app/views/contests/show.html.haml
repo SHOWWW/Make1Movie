@@ -35,7 +35,10 @@
                   .col-xs-4
                     .thumbnail
                       .caption
-                        %h3 No.1
+                        %h3
+                          No.1
+                          (票)
+                          = @votes
                       = @movies[0].url.html_safe
                   .col-xs-4
                     .thumbnail

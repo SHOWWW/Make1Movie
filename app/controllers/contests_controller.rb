@@ -7,6 +7,7 @@ class ContestsController < ApplicationController
     @contest = Contest.find(params[:id])
     @movies = @contest.movies
     @vote = Vote.new
+    @votes = Vote.count(params[:id])
   end
 
   def new
@@ -47,6 +48,7 @@ class ContestsController < ApplicationController
   end
 
   def url
+    @contest = Contest.last
   end
 
   private
