@@ -17,11 +17,9 @@
 
     .button-group
       .next-button
-        = link_to "/contests/(@contest)/url", class: "btn btn-default" do
-          作成する
+        =link_to "作成する", {:action => "url"},{:class => "btn btn-warning"}
       .back-button
-        = link_to "/contests/(@contest)/movie", class: "btn btn-default" do
-          戻る
+        =link_to "戻る", {:action => "movie"},{:class => "btn btn-default"}
       .clear
 / ------------------------------------
 

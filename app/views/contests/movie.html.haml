@@ -10,92 +10,86 @@
         動画の追加（２／４）
     .clear
 
-    .input-url
-      %form
-        .form-group
-          %label{:for => "exampleInputUrl"}
-            %a{:href => "https://www.youtube.com/", :target => "_blank"}
-              YOUTUBE
-            のURLを入力して下さい
-          %input#exampleInputUrl.form-control{:placeholder => "Enter YOUTUBE URL", :type => "url"}
-    .input-url
-      %form
-        .form-group
-          %label{:for => "exampleInputEmail1"} 動画のタイトルを入力して下さい
-          %input#exampleInputTitle.form-control{:placeholder => "Enter TITLE", :type => "title"}
-    .candidacy
-      %button
-        追加する
-    .now-list-title
-      現在追加されている動画
-    .now-list{:style => "background-image: url('./img/bg.gif')"}
-      .tab-content
-        .tab-pane.fade.in.active{:id => "投票ページ", :role => "tabpanel"}
-          .row
-            .col-xs-4
-              .thumbnail
-                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
-                .caption
-                  %h3 No.1 Hilty&Bosch
-                  %p{:style => "text-align: right"} 投稿者：  dance2000
-                  %p
-                  .vote
-                    %button 削除する
-            .col-xs-4
-              .thumbnail
-                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
-                .caption
-                  %h3 No.1 Hilty&Bosch
-                  %p{:style => "text-align: right"} 投稿者：  dance2000
-                  %p
-                  .vote
-                    %button 削除する
-            .col-xs-4
-              .thumbnail
-                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
-                .caption
-                  %h3 No.1 Hilty&Bosch
-                  %p{:style => "text-align: right"} 投稿者：  dance2000
-                  %p
-                  .vote
-                    %button 削除する
-          .row
-            .col-xs-4
-              .thumbnail
-                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
-                .caption
-                  %h3 No.1 Hilty&Bosch
-                  %p{:style => "text-align: right"} 投稿者：  dance2000
-                  %p
-                  .vote
-                    %button 削除する
-            .col-xs-4
-              .thumbnail
-                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
-                .caption
-                  %h3 No.1 Hilty&Bosch
-                  %p{:style => "text-align: right"} 投稿者：  dance2000
-                  %p
-                  .vote
-                    %button 削除する
-            .col-xs-4
-              .thumbnail
-                %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
-                .caption
-                  %h3 No.1 Hilty&Bosch
-                  %p{:style => "text-align: right"} 投稿者：  dance2000
-                  %p
-                  .vote
-                    %button 削除する
-        .tab-pane.fade{:id => "ランキングページ", :role => "tabpanel"} b
-    .button-group
-      .next-button
-        =link_to "/contests/(@contest)/preview", class: "btn btn-warning" do
-          次へ進む
-      .back-button
-        =link_to new_contest_path, class: "btn btn-default" do
-          戻る
-      .clear
+    = form_for @movie, url: {action: "add"} do |f|
+      .input-url
+        %a{:href => "https://www.youtube.com/", :target => "_blank"}
+          YOUTUBE
+        のURLを入力して下さい
+        = f.text_field :url
+      .candidacy
+        =f.submit(["追加する"])
+
+        -#= submit_tag '追加する'
+
+      / .now-list-title
+      /   現在追加されている動画
+      / .now-list{:style => "background-image: url('./img/bg.gif')"}
+      /   .tab-content
+      /     .tab-pane.fade.in.active{:id => "投票ページ", :role => "tabpanel"}
+      /       .row
+      /         .col-xs-4
+      /           .thumbnail
+      /             %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
+      /             .caption
+      /               %h3 No.1 Hilty&Bosch
+      /               %p{:style => "text-align: right"} 投稿者：  dance2000
+      /               %p
+      /               .vote
+      /                 %button 削除する
+      /         .col-xs-4
+      /           .thumbnail
+      /             %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
+      /             .caption
+      /               %h3 No.1 Hilty&Bosch
+      /               %p{:style => "text-align: right"} 投稿者：  dance2000
+      /               %p
+      /               .vote
+      /                 %button 削除する
+      /         .col-xs-4
+      /           .thumbnail
+      /             %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
+      /             .caption
+      /               %h3 No.1 Hilty&Bosch
+      /               %p{:style => "text-align: right"} 投稿者：  dance2000
+      /               %p
+      /               .vote
+      /                 %button 削除する
+      /       .row
+      /         .col-xs-4
+      /           .thumbnail
+      /             %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
+      /             .caption
+      /               %h3 No.1 Hilty&Bosch
+      /               %p{:style => "text-align: right"} 投稿者：  dance2000
+      /               %p
+      /               .vote
+      /                 %button 削除する
+      /         .col-xs-4
+      /           .thumbnail
+      /             %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
+      /             .caption
+      /               %h3 No.1 Hilty&Bosch
+      /               %p{:style => "text-align: right"} 投稿者：  dance2000
+      /               %p
+      /               .vote
+      /                 %button 削除する
+      /         .col-xs-4
+      /           .thumbnail
+      /             %iframe{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "180"}
+      /             .caption
+      /               %h3 No.1 Hilty&Bosch
+      /               %p{:style => "text-align: right"} 投稿者：  dance2000
+      /               %p
+      /               .vote
+      /                 %button 削除する
+
+      .button-group
+        .next-button
+          =link_to "次へ進む", {:action => "preview"},{:class => "btn btn-warning"}
+        .back-button
+          =link_to new_contest_path, class: "btn btn-default" do
+            戻る
+        .clear
 / ------------------------------------
 
 = render partial: "footer"
