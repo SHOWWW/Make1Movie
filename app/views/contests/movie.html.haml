@@ -14,7 +14,8 @@
       .input-url
         %a{:href => "https://www.youtube.com/", :target => "_blank"}
           YOUTUBE
-        のURLを入力して下さい
+        の埋め込みコードを入力して下さい
+      .input-code
         = f.text_field :url
       .candidacy
         =f.submit(["追加する"])

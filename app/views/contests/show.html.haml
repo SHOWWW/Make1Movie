@@ -8,7 +8,7 @@
         このページはプライベートのページです。また、投票結果は誰にも見られることはありません。あなたが投票したページです。
       %h4
         現在No.3に投票しています。
-  .main-content{:style => "background-image: url('/assets/bg.gif')"}
+  .main-content
     .contest-title
       .float-left
         OurBestDanceShow vol.1
@@ -30,24 +30,24 @@
                 .col-xs-4
                   .thumbnail
                     .caption
-                      %h3 No.1 Hilty&Bosch
-                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "#{@movies[0].url}", :width => "560"}
+                      %h3 No.1
+                    = @movies[0].url.html_safe
                     .caption
                       .vote
                         %button 投票する
                 .col-xs-4
                   .thumbnail
                     .caption
-                      %h3 No.2 Hilty&Bosch
-                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      %h3 No.2
+                    = @movies[1].url.html_safe
                     .caption
                       .vote
                         %button 投票する
                 .col-xs-4
                   .thumbnail
                     .caption
-                      %h3 No.3 Hilty&Bosch
-                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      %h3 No.3
+                    = @movies[2].url.html_safe
                     .caption
                       .vote
                         %button 投票する
@@ -55,24 +55,24 @@
                 .col-xs-4
                   .thumbnail
                     .caption
-                      %h3 No.4 Hilty&Bosch
-                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      %h3 No.4
+                    = @movies[3].url.html_safe
                     .caption
                       .vote
                         %button 投票する
                 .col-xs-4
                   .thumbnail
                     .caption
-                      %h3 No.5 Hilty&Bosch
-                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      %h3 No.5
+                    = @movies[4].url.html_safe
                     .caption
                       .vote
                         %button 投票する
                 .col-xs-4
                   .thumbnail
                     .caption
-                      %h3 No.6 Hilty&Bosch
-                    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/4JsJoBzF4AY", :width => "560"}
+                      %h3 No.6
+                    = @movies[5].url.html_safe
                     .caption
                       .vote
                         %button 投票する
