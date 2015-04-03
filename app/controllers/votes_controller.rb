@@ -7,6 +7,7 @@ class VotesController < ApplicationController
       redirect_to root_url
     else
       raise
+
       # redirect_to :controller=>"contests",:action=>"show"
     end
   end
